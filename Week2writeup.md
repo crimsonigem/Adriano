@@ -1,1 +1,21 @@
+# Week 2 Write-Up
 
+### Our Library
+
+The first step in our iGEM project will be to create and screen a library of active biomaterials for activity. We have settled on the high throughput method to maximize our chances of a 'hit' - or a biomaterial that actually works as intended. Though the Joshi lab has successfully attached various peptides to curli fibers that retain their functionality, there is no guarantee that any construct will work. Furthermore, there is the added challenge that we are asking *E. coli* to produce anti-microbial peptides, which may kill the cell before they are exported. So, a library approach is necessary to produce a candidate biomaterial that 1) won't kill *E. coli* and 2) will have the expected function.
+
+There will be four variable parts to our library screen: the fiber monomer, a linker, the 'payload,' and an additional peptide domain. The fiber monomer is the protein that polymerizes in order to produce the biopolymer of interest; for curli fibers, that would be the CsgA protein. The linker is a short sequence of flexible amino acids that connects the monomer to the fused peptide. The payload is the peptide we are affixing to the biopolymer to produce a desired function; we'll mostly be looking at anti-microbial peptides here. Finally, the additional protein domain is an extra peptide that might enhance the expression of the biopolymer fusion in any way. For example, it may keep *E. coli* safe by preventing the anti-microbial peptide from folding into its active conformation until it's outside of the cell. The additional protein domain is the part of the library that's up in the air most right now. Everything like promoters, ribosome binding sites, and terminators will stay the same across the plasmids for this experiment.
+
+To get a sense of the scale though, let's throw in some numbers. If we are creating a library with 4 fiber monomers, 3 linkers, 30 payloads, and 1 additional protein domain, there are already 360 combinations that we need to test. We can't completely automate the process, so that's a lot of wet lab work(!), even if we are planning to run protocols in parallel in 96-well plates.
+
+![exp1library](/figures/exp1library.jpg)
+
+In fact, those numbers are what we'll probably be working with. We have 3 CsgA orthologs and a spider silk monomer to test. We'll be looking at 3-4 linkers of differing lengths, and we already have around 30 anti-microbial peptides compiled that we want to order as oligomers. As for the additional protein domain, we'll have to see...
+
+### How Libraries are Feasible
+
+As you can imagine, constructing these DNA parts using the inefficient methods of the early 2000's would be impossibly tedious. Each individual construct would take days to make, so there's no way over 100 constructs could've been made in a summer amongst our 5 team members. Luckily, the methods for making DNA constructs have drastically improved over the past few years to make the process of constructing a genetic library for screening possible.
+
+Let's discuss MoClo DNA assembly; MoClo is a shorthand for Modular Cloning. The method was devised by three successive years of the Boston University iGEM team and very well documented as BBF RFC 94 on the BioBricks Foundation website.
+
+It uses type IIS restriction enzymes to create an idempotent strategy for ligating DNA parts together. Let's unpack that statement a bit. Type IIS restriction enzymes are a particular set of restriction enzymes that cut DNA immediately adjacent to the recognition site. So, they recognize some sequence in the genetic material and then cut a couple base pairs to one side. Furthermore, because their recognition sites are non-palindromic, they'll predictably cut on one side of the recognition site or the other depending on the direction of the sequence. BU iGEM was able to take advantage of this property to create an idempotent system. What this means is that, no matter how many times the process is repeatedly applied to create larger and larger constructs, the complexity of the process remains the same.
