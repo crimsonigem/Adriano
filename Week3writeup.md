@@ -16,6 +16,7 @@ The upshot is that our week was marked by more presentation and outreach prepara
  I wrote some very basic string manipulation functions in Python, and the hope is that I'll be able to add to these and use them at the beginning of next week to order our ultramers for MoClo DNA assembly. There's really nothing in the code that wouldn't be understandable after a short primer with Python. My data structure for sequences includes both the sequence (i.e. the order of a, t, c, and g) and a bool which indicates the directionality of the strand (5' to 3' or 3' to 5'). In the framework I've made, I treat DNA sequences as a linear construction; this is limiting because it then becomes difficult to represent a circular piece of DNA like a plasmid. Also, I am treating DNA as a single-stranded structure right now, though it is not difficult to change the dictionary so that I include double-stranded information. I even have hashed comments in my code - with too much detail perhaps - following from my only coding experience in CS50.
 
  def check(DNA):
+ 
      # check that DNA variable is a dict
      if type(DNA) is not dict:
          print("Not a valid DNA variable")
